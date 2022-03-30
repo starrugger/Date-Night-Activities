@@ -1,3 +1,12 @@
+# Steps to get started for Us
+1. clone repo 
+2.  run `npm ci` to pull in all the node packages you need.
+3. run `npm run watch` and start editing your js files
+4. keep it running to automatically run `npm run build`
+5. In another terminal, run `npm start`
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
