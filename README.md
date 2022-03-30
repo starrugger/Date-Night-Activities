@@ -1,10 +1,24 @@
 # Steps to get started for Us
+
+## To start coding:
 1. clone repo 
 2.  run `npm ci` to pull in all the node packages you need.
 3. run `npm run watch` and start editing your js files
 4. keep it running to automatically run `npm run build`
 5. In another terminal, run `npm start`
 
+
+## Once you're ready to push your code
+1. `git remote rm origin` to remove old origin
+2. `git remote add origin https://github.com/starrugger/Date-Night-Activities.git` to add new origin
+3. to make branch and push code:
+
+```
+git checkout -b feature 
+git add --all
+git commit -m "feature commit"
+git push origin feature
+```
 
 
 # Getting Started with Create React App
