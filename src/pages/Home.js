@@ -35,7 +35,8 @@ function Home() {
   }
 
   function updateMap(newLocation) {
-
+    userLocation.current = newLocation;
+    searchMaps();
   }
 
   function searchButton() {
