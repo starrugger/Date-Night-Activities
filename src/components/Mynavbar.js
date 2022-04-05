@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Comp.css"
@@ -42,7 +43,14 @@ export function Mynavbar(props) {
           onChange={(e) => props.userLocation.current = e.target.value}
         />
       </Form>
-      <NavDropdown title="Profile" id="nav-dropdown-dark-example" align="end" menuVariant="dark">
+
+      {/* Need to change image */}
+      <NavDropdown title= {<img
+            src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg"
+            class="rounded-circle z-depth-0"
+            alt="profile image"
+            height="35"
+          />}id="nav-dropdown-dark-example" align="end" menuVariant="dark">
           <NavDropdown.Item href="/profile">Dashboard</NavDropdown.Item>
           <NavDropdown.Item href="#action4"> Edit Profile </NavDropdown.Item>
 
