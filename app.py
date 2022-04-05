@@ -37,4 +37,17 @@ def signup():
 
     return flask.render_template("signup.html")
 
+@app.route("/search_yelp", methods=['GET','POST'])
+def search_yelp():
+    """Route for loading yelp info"""
+    request = flask.request.get_json(force=True)
+    location = request['location']
+    term = request['term']
+    rating = int(request['rating'])
+    price = request['price']
+
+    business_list = business_search(location,term,rating,price)
+
+    return flask.jsonify(business_list)
+
 app.run(debug=True)
