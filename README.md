@@ -3,9 +3,9 @@
 ## To start coding:
 1. clone repo 
 2.  run `npm ci` to pull in all the node packages you need.
-3. run `npm run watch` and start editing your js files
-4. keep it running to automatically run `npm run build`
-5. In another terminal, run `npm start`
+3. run `npm install react-router-dom --save`
+4. run `npm run watch` and start editing your js files to keep it running to automatically run `npm run build`
+6. In another terminal, run `python3 app.py`
 
 
 ## Once you're ready to push your code
