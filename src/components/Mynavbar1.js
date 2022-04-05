@@ -9,7 +9,7 @@ import Nav from 'react-bootstrap/Nav';
 import { FormControl } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 
-export function Mynavbar(props) {
+export function Mynavbar1(props) {
 
   const searchHandler = (e) => {
     e.preventDefault();
