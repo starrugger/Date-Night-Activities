@@ -15,7 +15,7 @@ bp = flask.Blueprint(
 
 # route for serving React page
 @bp.route("/home")
-def index():
+def home():
     # NB: DO NOT add an "index.html" file in your normal templates folder
     # Flask will stop serving this React page correctly
     return flask.render_template("index.html")
@@ -25,7 +25,6 @@ app.register_blueprint(bp)
 
 @app.route("/")
 def index():
-    
     return flask.redirect(flask.url_for("login"))
 
 @app.route("/login")
@@ -37,6 +36,11 @@ def login():
 def signup():
 
     return flask.render_template("signup.html")
+
+@app.route("/profile")
+def profile():
+
+    return flask.render_template("index.html")
 
 @app.route("/search_yelp", methods=['GET','POST'])
 def search_yelp():

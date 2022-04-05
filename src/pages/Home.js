@@ -1,5 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import "../App.css";
 import { useState, useRef, useEffect } from "react";
+import { Mynavbar } from "../components/Mynavbar";
+import { DisplayCards } from "../components/DisplayCards";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Home() {
     const [activities, setActivities] = useState([]);
