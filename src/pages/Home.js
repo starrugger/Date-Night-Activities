@@ -1,9 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import "../App.css";
+import { MapDisplay } from "../components/MapDisplay";
 import { useState, useRef, useEffect } from "react";
-import { Mynavbar1 } from "../components/Mynavbar1";
-import { DisplayCards } from "../components/DisplayCards";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function Home() {
   const [activities, setActivities] = useState([]);
@@ -33,9 +30,25 @@ function Home() {
       });
   }
 
-  function searchMaps() {}
+  function searchMaps() {
+    fetch("/search_maps", {
+      method: "POST",
+      cache: "no-cache",
+      headers: {
+        content_type: "application/json",
+      },
+      body: JSON.stringify(userLocation.current),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setMapsLink(data);
+      });
+  }
 
-  function updateMap(newLocation) {}
+  function updateMap(newLocation) {
+    userLocation.current = newLocation;
+    searchMaps();
+  }
 
   function searchButton() {
     console.log(userLocation);
@@ -49,10 +62,8 @@ function Home() {
 
   return (
     <div className="App">
-      <Mynavbar1 searchButton={searchButton} userLocation={userLocation} />
-      {useEffect(() => {
-        searchButton();
-      }, [])}
+      <Mynavbar searchButton={searchButton} userLocation={userLocation} />
+      {useEffect(() => { searchButton() }, [])}
 
       <div className="list">
         <div className="filter">
@@ -96,10 +107,11 @@ function Home() {
       </div>
 
       <div className="map">
-        <iframe title="google-map" className="map" src={mapsLink}></iframe>
+        <MapDisplay value={mapsLink}></MapDisplay>
       </div>
     </div>
   );
+
 }
 
 export default Home;
