@@ -9,7 +9,7 @@ import RouteConstants from '../../constants/RouteConstants';
 
 const clientId = process.env.REACT_APP_CLIENT_ID;
 
-function ContinueButton() {
+function GoogleContinueButton() {
   const navigate = useNavigate();
 
   const onSuccess = (res) => {
@@ -40,4 +40,4 @@ function ContinueButton() {
   );
 }
 
-export default ContinueButton;
+export default GoogleContinueButton;
