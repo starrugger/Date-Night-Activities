@@ -1,5 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { MapDisplay } from "../components/MapDisplay";
+import { Mynavbar1 } from "../components/Mynavbar1";
+import { DisplayCards } from "../components/DisplayCards";
 import { useState, useRef, useEffect } from "react";
 
 function Home() {
@@ -62,7 +64,7 @@ function Home() {
 
   return (
     <div className="App">
-      <Mynavbar searchButton={searchButton} userLocation={userLocation} />
+      <Mynavbar1 searchButton={searchButton} userLocation={userLocation} />
       {useEffect(() => { searchButton() }, [])}
 
       <div className="list">
