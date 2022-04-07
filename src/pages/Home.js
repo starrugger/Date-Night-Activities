@@ -68,6 +68,7 @@ function Home() {
       {useEffect(() => { searchButton() }, [])}
 
       <div className="list">
+        <br/>
         <div className="filter">
           <select
             name="type"
@@ -105,6 +106,7 @@ function Home() {
             Filter!
           </button>
         </div>
+        <br/>
         <DisplayCards activities={activities} updateMap={updateMap} />
       </div>
 
